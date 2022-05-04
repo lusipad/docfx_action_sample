@@ -6,14 +6,14 @@ on:
     - main
     paths:
     - src/**
-    - docs/**
-    - .github/workflows/docs.yml
+    - doc/**
+    - .github/workflows/mian.yml
   pull_request:
     branches:
     - main
     paths:
     - docs/**
-    - .github/workflows/docs.yml
+    - .github/workflows/mian.yml
   workflow_dispatch:
 
 jobs:
