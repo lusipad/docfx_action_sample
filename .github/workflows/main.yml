@@ -1,4 +1,4 @@
-name: Docs
+name: Doc
 
 on:
   push:
@@ -12,12 +12,12 @@ on:
     branches:
     - main
     paths:
-    - docs/**
+    - doc/**
     - .github/workflows/mian.yml
   workflow_dispatch:
 
 jobs:
-  generate-docs:
+  generate-doc:
 
     runs-on: windows-latest
 
@@ -35,7 +35,7 @@ jobs:
         args: install docfx
 
     - name: DocFX Build
-      working-directory: docs
+      working-directory: doc
       run: docfx .\docfx.json
       continue-on-error: false
 
@@ -44,5 +44,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_site
+        publish_dir: doc/_site
         force_orphan: true
